@@ -62,7 +62,7 @@ class Parameter(PickleMixin):
         ''' Update the parameter values according to the given step. '''
         if self._monitor:
             self._tmp_step = step
-        self._array += step
+        self._array += step * self.learn_rate
 
     def penalty(self):
         if self.weight_decay == 0.0:
